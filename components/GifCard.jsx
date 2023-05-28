@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { PacmanLoader } from "react-spinners";
 
-const GifCard = ({data}) => {
 
+const GifCard = ({data, loading}) => {
   const [copied, setcopied] = useState("")
+  console.log(loading)
   const copyURL = async (link) => {
     try {
       await navigator.clipboard.writeText(link);
@@ -14,7 +16,8 @@ const GifCard = ({data}) => {
 
   return (
     <>
-      {data.map((currGif, key) => {
+      { loading ? <div className="loader" ><PacmanLoader color="#36d7b7" /></div>
+      : data.map((currGif, key) => {
         const {id, images } = currGif;
         return (
           <div className="gif-cards" key={id}>
@@ -30,7 +33,7 @@ const GifCard = ({data}) => {
             </button>
           </div>
         );
-      })}
+      })} 
     </>
   );
 };
