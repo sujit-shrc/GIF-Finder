@@ -18,6 +18,18 @@ cd GIF-Finder
 ```bash
 npm install
 ```
+
+ - Create ```.env``` file in project directory to store API-KEY
+```bash
+    # In linux
+    touch .env
+```
+
+ - Inside ```.env``` file write your Giphy API-KEY
+ ```bash
+    VITE_API_KEY = ""
+ ```
+
  - Run the following command to run GIF-Finder app
  ```bash
  npm run dev
